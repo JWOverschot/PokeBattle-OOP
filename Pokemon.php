@@ -25,7 +25,7 @@ class Pokemon {
 		if ($this->name != $pokemon) {
 			for ($i=0; $i < count($this->attacks); $i++) {
 				if ($this->attacks[$i]->name == $attack) {
-					print_r($this->name . ' attacks ' . $pokemon->name . ' with ' . $attack . ' doing ' . $this->attacks[$i]->demage . ' damage.<br>');
+					print_r($this->name . ' attacks ' . $pokemon->name . ' with ' . $attack . ' doing ' . $this->attacks[$i]->demage . ' damage.');
 					$attackDamage = $this->attacks[$i]->demage;
 
 					if ($pokemon->hitpoints < $attackDamage) {
@@ -43,6 +43,7 @@ class Pokemon {
 	{
 		
 		$this->hitpoints = $damage;
+		$this->health = $this->hitpoints;
 	}
 
 	public function __toString()
