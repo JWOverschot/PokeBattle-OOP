@@ -55,9 +55,7 @@ session_start();
 				}
 			}
 		?>
-	</div>
-
-	<h3><?= $selectedPokemon->name ?></h3>
+		<h3><?= $selectedPokemon->name ?></h3>
 	<form>
 		<label for="attacks-dropdown">Attacks: </label>
 		<select id="attacks-dropdown" name="attack">
@@ -75,6 +73,9 @@ session_start();
 		</select>
 		<input type="submit" value="Attack">
 	</form>
+	</div>
+
+	
 </body>
 </html>
 

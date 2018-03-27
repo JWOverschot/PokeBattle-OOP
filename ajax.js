@@ -11,11 +11,11 @@ $(document).ready( () => {
 			// Submit the form using AJAX.
 			$.ajax({
 				type: 'POST',
-				url: '#',
+				url: '#/doAttack',
 				data: formData,
 				//success: () => {}
 			}).done(function(response) {
-				//$("#scores").load("# #scores");
+				//$("#scores").load(location.href + " #scores");
 			}).fail(function(data) {
 				console.error('You did done failed');
 			});
