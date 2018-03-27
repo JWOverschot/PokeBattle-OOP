@@ -25,9 +25,18 @@ class Pokemon {
 		if ($this->name != $pokemon) {
 			for ($i=0; $i < count($this->attacks); $i++) {
 				if ($this->attacks[$i]->name == $attack) {
-					print_r($this->name . ' attacks ' . $pokemon->name . ' with ' . $attack . ' doing ' . $this->attacks[$i]->demage . ' damage.');
 					$attackDamage = $this->attacks[$i]->demage;
-
+					// calculate weakness
+					if ($pokemon->energyType == $this->weakness->energyType) {
+						$attackDamage = $attackDamage*$this->weakness->multiplier;
+					}
+					// calculate resistance
+					if ($pokemon->energyType == $this->resistance->energyType) {
+						$attackDamage = $attackDamage-$this->resistance->value;
+					}
+					// print dameage done
+					print_r($this->name . ' attacks ' . $pokemon->name . ' with ' . $attack . ' doing ' . $attackDamage . ' damage.');
+					// calculate damage
 					if ($pokemon->hitpoints < $attackDamage) {
 						$pokemon->getDamage(0);
 					} else {
