@@ -38,9 +38,9 @@ class Pokemon {
 					print_r($this->name . ' attacks ' . $pokemon->name . ' with ' . $attack . ' doing ' . $attackDamage . ' damage.');
 					// calculate damage
 					if ($pokemon->hitpoints < $attackDamage) {
-						$pokemon->getDamage(0);
+						$pokemon->setHealth(0);
 					} else {
-						$pokemon->getDamage($pokemon->hitpoints - $attackDamage);
+						$pokemon->setHealth($pokemon->hitpoints - $attackDamage);
 					}
 				}
 			}
@@ -48,11 +48,9 @@ class Pokemon {
 		
 	}
 
-	public function getDamage($damage)
+	public function setHealth($damage)
 	{
-		
-		$this->hitpoints = $damage;
-		$this->health = $this->hitpoints;
+		$this->health = $damage;
 	}
 
 	public function __toString()

@@ -24,18 +24,18 @@ session_start();
 
 	$selectedPokemon = reset($pokemons);
 
-	print_r($pika->name .' HP '. $pika->hitpoints .'<br>');
-	print_r($char->name .' HP '. $pika->hitpoints .'<br><br>');
+	print_r($pika->name .' HP '. $pika->health .'<br>');
+	print_r($char->name .' HP '. $pika->health .'<br><br>');
 
 	$pika->doAttack('Electric Ring', $char);
 
-	print_r('<br>' . $pika->name .' HP '. $pika->hitpoints .'<br>');
-	print_r($char->name .' HP '. $char->hitpoints .'<br><br>');
+	print_r('<br>' . $pika->name .' HP '. $pika->health .'<br>');
+	print_r($char->name .' HP '. $char->health .'<br><br>');
 
 	$char->doAttack('Flare', $pika);
 
-	print_r('<br>' . $pika->name .' HP '. $pika->hitpoints .'<br>');
-	print_r($char->name .' HP '. $char->hitpoints .'<br><br>');
+	print_r('<br>' . $pika->name .' HP '. $pika->health .'<br>');
+	print_r($char->name .' HP '. $char->health .'<br><br>');
 	?>
 	<div id="scores">
 		<?php
@@ -43,8 +43,8 @@ session_start();
 			$opponentPost = isset($_POST['opponent']) ? $_POST['opponent'] : null;
 			if ($attackPost != null && $opponentPost != null) {
 				$selectedPokemon->doAttack($attackPost, $pokemons[$opponentPost]);
-				print_r('<br>' . $pika->name .' HP '. $pika->hitpoints .'<br>');
-				print_r($char->name .' HP '. $char->hitpoints .'<br><br>');
+				print_r('<br>' . $pika->name .' HP '. $pika->health .'<br>');
+				print_r($char->name .' HP '. $char->health .'<br><br>');
 				$currentPokemonIndex = array_search($selectedPokemon, $pokemons);
 
 				if ($currentPokemonIndex > count($pokemons)) {
